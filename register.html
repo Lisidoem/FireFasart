@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./allcss/register.css">
+    <title>用户注册-家庭智能消防</title>
+</head>
+
+<body>
+    <!-- 用户头像 -->
+    <div class="uHeadall">
+        <p>请选择你的头像</p>
+        <div class="head1"><img src="./img/userhead1.webp" ></div>
+        <div class="head2"><img src="./img/userhead2.webp" ></div>
+        <div class="head3"><img src="./img/userhead3.webp" ></div>
+        <div class="head4"><img src="./img/userhead4.webp" ></div>
+        <div class="head5"><img src="./img/userhead5.webp" ></div>
+        <div class="head6"><img src="./img/userhead6.webp" ></div>
+    </div>
+
+
+    <div class="mainbox">
+        <div class="logo">
+            <img src="./img/logo-白.png" alt="">
+        </div>
+        <div class="register-logo">
+            <span>用户注册</span>
+        </div>
+        <div class="register">
+            <form action="./login.html" method="post">
+                <div class="avator">
+                    <img id="avator" src="./img/uShead.png">
+                    <p style="color: rgb(107, 102, 102);font-weight: 400;">请设置头像</p>
+                </div>
+                <div class="register-ifmt">
+                    <table class="ifmt-table" width="500px" height="250px" align="center">
+                        <tr>
+                            <td>手机号</td>
+                            <td><input type="text" placeholder="请输入手机号" required="required" class="phoneNum"></td>
+                            <td>
+                                <div class="alert-p">
+                                    <span style="font-size: 12px;color: red;">
+                                        请输入正确的手机号!
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>验证码</td>
+                            <td>
+                                <input type="text" placeholder="请输入手机验证码" required="required" class="code">
+                            </td>
+                            <td>
+                                <button class="getcode" type="button">获取验证码</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>密码
+                                <div class="isPassword-no1"></div>
+                            </td>
+                            <td><input type="password" placeholder="输入至少8位且必有数字,特殊字符,字母" required="required"
+                                    class="ps1"></td>
+                            <td>
+                                <div class="alert-pw">
+                                    <span style="font-size: 12px;color: red;">
+                                        请输入正确的密码格式!
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>密码确认
+                                <div class="isPassword-no2"></div>
+                            </td>
+                            <td>
+
+                                <input type="password" placeholder="请再次输入密码" required="required" class="ps2">
+                            </td>
+                            <td>
+                                <div class="alert">
+                                    <span style="font-size: 12px;color: red;">
+                                        两次密码不一致!
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <input class="submit" type="submit" value="注册">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+            <div class="turnLogin">
+                <span><a href="./login.html">已有账号?点击登录</a></span>
+            </div>
+        </div>
+        <div class="foot">
+            家庭智能消防软件网版权所有 <br>
+            联系人 QQ:3650781171<br>
+            联系人电话:14706629927
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        //手机号校正
+        $('.phoneNum').change((e) => {
+            const phoneReg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/
+            var isTure = phoneReg.test(e.target.value)
+            if (isTure == false) {
+                $('.alert-p').show()
+            } else {
+                $('.alert-p').hide()
+            }
+        })
+
+        //验证码发送
+        $('.getcode').click(() => {
+            var ispMood = $('.alert-p').css('display')
+            var pMood = $('.phoneNum').val()
+
+            if (ispMood === "none" && pMood !== "") {
+                alert("验证码发送成功！")
+            } else {
+                alert("请输入正确的手机号码！")
+            }
+        })
+
+        //密码显示
+        var isShow1 = false
+        var isShow2 = false
+        $('.isPassword-no1').click(() => {
+
+            if (isShow1 == false) {
+                $('.isPassword-no1').addClass('isPassword-yes1')
+                $('.isPassword-no1').removeClass('isPassword-no1')
+                isShow1 = true
+                $('.ps1').attr('type', 'text')
+            }
+            else {
+                $('.isPassword-yes1').addClass('isPassword-no1')
+                $('.isPassword-yes1').removeClass('isPassword-yes1')
+                isShow1 = false
+                $('.ps1').attr('type', 'password')
+            }
+        })
+
+        $('.isPassword-no2').click(() => {
+
+            if (isShow2 == false) {
+                $('.isPassword-no2').addClass('isPassword-yes2')
+                $('.isPassword-no2').removeClass('isPassword-no2')
+                isShow2 = true
+                $('.ps2').attr('type', 'text')
+            }
+            else {
+                $('.isPassword-yes2').addClass('isPassword-no2')
+                $('.isPassword-yes2').removeClass('isPassword-yes2')
+                isShow2 = false
+                $('.ps2').attr('type', 'password')
+            }
+        })
+
+        //密码校正
+        $('.ps1').change((e) => {
+            const passwordReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[`~!@#$%^&*()_+<>?:"{},.\/\\;'[\]])[A-Za-z\d`~!@#$%^&*()_+<>?:"{},.\/\\;'[\]]{8,}$/;
+            var isTure = passwordReg.test(e.target.value)
+            if (isTure == false) {
+                $('.alert-pw').show()
+            } else {
+                $('.alert-pw').hide()
+            }
+        })
+
+        //两次输入密码不一致无法注册
+        $('.ps2').change(function () {
+            var ps1 = $('.ps1').val()
+            var ps2 = $('.ps2').val()
+            if (ps1 !== ps2) {
+                $('.alert').show()
+            } else {
+                $('.alert').hide()
+            }
+        })
+
+        //头像地址存储
+        let headindex=0;
+        $('#avator').click(function () {
+            $('.uHeadall').show()
+        })
+
+        $('.uHeadall>div').click(()=>{
+            $('.uHeadall').hide()
+        })
+
+        $('.head1').click(()=>{
+            headindex=1;
+            $('#avator').attr('src',"./img/userhead1.webp")
+        })
+        $('.head2').click(()=>{
+            headindex=2;
+            $('#avator').attr('src','./img/userhead2.webp')
+        })
+        $('.head3').click(()=>{
+            headindex=3;
+            $('#avator').attr('src','./img/userhead3.webp')
+        })
+        $('.head4').click(()=>{
+            headindex=4;
+            $('#avator').attr('src','./img/userhead4.webp')
+        })
+        $('.head5').click(()=>{
+            headindex=5;
+            $('#avator').attr('src','./img/userhead5.webp')
+        })
+        $('.head6').click(()=>{
+            headindex=6;
+            $('#avator').attr('src','./img/userhead6.webp')
+        })
+
+        //保存用户信息
+        $('.submit').click((event) => {
+            var phoneNum = $('.phoneNum').val()
+            var code = $('.code').val()
+            var psw1 = $('.ps1').val()
+            var psw2 = $('.ps2').val()
+            var uNmood = $('.alert-p').css('display')
+            var pW1mood = $('.alert-pw').css('display')
+            var pW2mood = $('.alert').css('display')
+            if (phoneNum == "" || code == "" || psw1 == "" || psw2 == "") {
+                return
+            }
+            //出现警报不能注册
+            if (uNmood === "block" || pW1mood === "block" || pW2mood === "block") {
+                event.preventDefault()
+                return
+            }
+
+            if (window.localStorage.userArr) {
+                //判断是否存在
+                var array = JSON.parse(window.localStorage.userArr);
+            } else {
+                array = [];//创建一个新数组
+            }
+
+            var username = $('.phoneNum').val()
+            var password = $('.ps2').val()
+            const user = {
+                username,
+                password,
+                headindex
+            }
+
+            console.log(headindex)
+            //遍历数组进行匹配
+            for (var i = 0; i < array.length; i++) {
+                //判断是否有相同账号
+                if (username == array[i].username) {
+                    alert("该账号已存在");
+                    event.preventDefault()
+                    return;
+                }
+            }
+            //创建对象
+            array.push(user);
+            window.localStorage.userArr = JSON.stringify(array);
+            alert("用户注册成功!");
+        })
+
+    </script>
+</body>
+
+</html>

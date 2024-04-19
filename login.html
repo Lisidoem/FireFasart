@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./allcss/login.css">
+    <title>用户登录-家庭智能消防</title>
+</head>
+
+<body>
+    <div class="mainbox">
+        <div class="login-logo">
+            <img src="./img/logo-白.png" alt="">
+        </div>
+        <div class="login-text">
+            <span>用户登录</span>
+        </div>
+        <div class="login">
+
+            <div class="head">
+                <img class="Head" src="./img/uShead.png" alt="">
+            </div>
+            <div class="login-ifmt">
+                <form action="./main.html">
+                    <table class="login-table" width="600px" height="150px" align="center">
+                        <tr>
+                            <td style="color: gray;">账号
+                            </td>
+                            <td>
+                                <input class="username" type="text" placeholder="请输入账号" required="required">
+                            </td>
+                            <td>
+                                <div class="alert-username" id="alert">
+                                    <span>用户不存在</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: gray;">密码
+
+                            </td>
+                            <td>
+                                <input class="password" type="password" placeholder="请输入密码" required="required">
+                                <div class="hidpsw"></div>
+                            </td>
+                            <td>
+                                <div class="alert-password" id="alert">
+                                    <span>密码错误</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">
+                                <input class="login-submit" type="submit" value="登录">
+                                <button class="register" type="button">注册账号</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="fgpsw">
+                <span><a href="./ResetPassword.html">忘记密码？</a></span>
+            </div>
+        </div>
+        <div class="foot">
+            家庭智能消防软件网版权所有 <br>
+            联系人 QQ:3650781171<br>
+            联系人电话:14706629927
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        //密码显示
+        var isShow = false
+        $('.hidpsw').click(() => {
+            if (isShow == false) {
+                isShow = true
+                $('.hidpsw').addClass('showpsw')
+                $('.hidpsw').removeClass('hidpsw')
+                $('.password').attr('type', 'text')
+            } else {
+                isShow = false
+                $('.showpsw').addClass('hidpsw')
+                $('.showpsw').removeClass('showpsw')
+                $('.password').attr('type', 'password')
+            }
+        })
+
+        //注册账号
+        $('.register').click(() => {
+            location.assign('./register.html')
+        })
+
+        //忘记密码
+
+
+        //账号,密码验证
+        if (window.localStorage.userArr) {
+            //判断是否存在
+            var array = JSON.parse(window.localStorage.userArr);
+        } else {
+            array = [];//创建一个新数组
+        }
+
+        var headindex;
+        var isHad = false;//定义一个开关变量
+        var index = 0; //定义一个下标确定用户
+        $('.username').change((e) => {
+
+            //遍历数组进行匹配
+            for (var i = 0; i < array.length; i++) {
+                if (e.target.value == array[i].username) {
+                    //有这个账号
+                    isHad = true;
+                    index = i;
+                    headindex = array[i].headindex 
+                    if(headindex==1){
+                        $('.Head').attr('src', './img/userhead1.webp')
+                    }else if(headindex==2){
+                        $('.Head').attr('src', './img/userhead2.webp')
+                    }else if(headindex==3){
+                        $('.Head').attr('src', './img/userhead3.webp')
+                    }else if(headindex==4){
+                        $('.Head').attr('src', './img/userhead4.webp')
+                    }else if(headindex==5){
+                        $('.Head').attr('src', './img/userhead5.webp')
+                    }else if(headindex==6){
+                        $('.Head').attr('src', './img/userhead6.webp')
+                    }else{
+                        $('.Head').attr('src', './img/uShead.png')
+                    }
+                    
+                }
+            }
+        })
+
+        $('.login-submit').click((event) => {
+            var username = $('.username').val();
+            var password = $('.password').val();
+            if (username == "" || password == "") {
+                return
+            }
+
+            if (isHad) {
+                //如果存在
+                $('.alert-username').hide()
+                if (password == array[index].password) {
+                    $('.alert-password').hide()
+                    alert("登录成功");
+                } else {
+                    $('.alert-password').show()
+                    event.preventDefault()
+                }
+            } else {
+                //账号不存在或输入错误
+                $('.alert-username').show()
+                event.preventDefault()
+            }
+        })
+
+    </script>
+</body>
+
+</html>

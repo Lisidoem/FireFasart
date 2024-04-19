@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/firefilgtbg.png');
+    background-size: 100% 100%;
+    
+}
+
+/* heared */
+
+.liulan {
+    padding-top: 5px;
+    text-align: center;
+    display: inline-block;
+    height: 32px;
+    width: 120px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 0 90px;
+    margin: 8px auto;
+}
+
+.main_next {
+    display: inline-block;
+    margin: 0px 0px;
+
+    .main_next_imgbox img {
+        width: 500px;
+        height: 256px;
+    }
+}
+
+.main_next div img {
+    width: 500px;
+}
+
+.slist {
+    border: 1px solid;
+    display: inline-block;
+    width: 48%;
+    margin: 3px;
+}
+
+.hbox {
+    border-bottom: 1px solid;
+    padding: 15px 10px;
+    background-color: #a5c8e7;
+}
+
+.p1 {
+    font-size: 20px;
+    margin: 0;
+    color: #0D5EA3;
+    font-weight: bold;
+}
+
+.slist ul {
+    padding: 0 0 0 15px;
+    margin: 0;
+}
+
+.slist li {
+
+    margin: 10px 0px;
+    list-style-position: inside;
+}
+
+.slist ul li::marker {
+    padding: 10px;
+    color: red;
+    font: 20px;
+}
+
+.slist li a {
+    display: inline-block;
+    width: 333px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-size: 16.4px;
+    color: #272727;
+}
+
+.slist li p {
+    margin: 0;
+    display: inline-block;
+    color: #0D5EA3;
+}
+
+/*  txtbox*/
+.txtbox {
+    margin-top: 20px;
+    display: block;
+    width: 1030px;
+    height: 540px;
+    position: relative;
+    left: 50%;
+    margin-left: -515px;
+}

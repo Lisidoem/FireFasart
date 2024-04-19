@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的家-家庭智能消防</title>
+    <!-- 导入阿里的图标样式文件 -->
+    <link rel="stylesheet" href="./allcss/iconfont.css">
+    <link rel="stylesheet" href="./allcss/index.css">
+    <link rel="stylesheet" href="./allcss/nav.css">
+    <link rel="stylesheet" href="./allcss/aboutus.css">
+    <link rel="stylesheet" href="./allcss/footer.css">
+    <link rel="stylesheet" href="./allcss/home.css">
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="item">
+            <li><a href="./main.html"><img src="./img/logo-白.png" alt="">首页</a></li>
+            <li><a href="./firefligt.html"><img src="./img/火警图标.png" alt="">火警</a></li>
+            <li><a href="./home.html"> <img src="./img/家图标.png" alt="">我的家</a></li>
+            <li><a class="o"><img src="./img/“关于我们”图标.png" alt="">关于我们</a></li>
+        </ul>
+        <div class="user">
+            <div class="userHead">
+                <img id="avator" src="" alt="我的头像">
+            </div>
+            <span class="set">我的</span>
+        </div>
+    </div>
+
+    <!-- 关于我们 -->
+    <div class="about">
+        <div class="aside">
+            <img src="./img/logo-白.png" alt="">
+        </div>
+        <div class="imf">
+            <div class="close">
+                <span class="close-C">✖</span>
+            </div>
+            <div class="text">
+                <span class="text-head">关于家庭智能消系统</span>
+                <span>
+                    &emsp; 如今，防火已成为我们生活中关注的一部分，而 <br>
+                    &emsp;火灾往往会造成严重的财产损失，甚至造成生命危险。<br>
+                    &emsp;在家中，电器故障，烹饪不慎，烟火烟草以及儿童不<br>
+                    &emsp; 慎玩火，电等都有可能造成火灾。基于此，我们制造<br>
+                    &emsp;的创安智联--家庭智能消防系统，能够提供全全面的<br>
+                    &emsp;火灾预防和应对措施，以保护家人和财产免受火灾威<br>
+                    &emsp;胁。该系统主要利用ESP8266等硬件和传感器技术,构<br>
+                    &emsp;建智能家庭防火系统。通过多种气体传感器检测环境<br>
+                    &emsp;中的可燃气体和有毒气体，配合温湿度传感器和摄像头 <br>
+                    &emsp;模块，实现对家庭环境的实时监测和远程控制。同时,<br>
+                    &emsp;采用无源蜂鸣器作为声光报警器，提高火灾警报的及 <br>
+                    &emsp;时性。通过备用电源和防火设施的完善，提高家庭成员 <br>
+                    &emsp;的火灾安全意识和应对能力，从而有效预防火灾事故 <br>
+                    &emsp;的发生。
+                </span>
+            </div>
+            <p>如有问题，请联系我们！</p>
+            <div class="wechat" id="lable">
+                <img src="./img/微信图标.png" alt="">
+                <span>&emsp;:Wang-Yue-NGC2237</span>
+            </div>
+            <div class="qq" id="lable">
+                <img src="./img/qq图标.jpg" alt="">
+                <span>&emsp;:3650781171</span>
+            </div>
+        </div>
+    </div>
+    <div class="mask"></div>
+
+    <div class="content">
+        <div class="menu-box">
+            <!-- 展示与隐藏侧边栏 开始-->
+            <input type="checkbox" id="menu-btn">
+            <label for="menu-btn"><i class="iconfont icon-yemianfanhui"></i></label>
+            <!-- 展示与隐藏侧边栏 结束-->
+            <div class="menu">
+                <!-- 侧边栏的标题 开始-->
+                <div class="menu-title">
+                    <h1>Menu</h1>
+                </div>
+                <!-- 侧边栏的标题 结束-->
+
+                <!-- 每一项导航 -->
+                <div class="menu-item">
+                    <input type="checkbox" id="menu-item1">
+                    <label for="menu-item1">
+                        <i class="menu-item-icon iconfont icon-a-01-shujuzhongxin"></i>
+                        <span>温度</span>
+                        <i class="menu-item-last iconfont icon-down"></i>
+                    </label>
+                    <div class="menu-content">
+                        <span class="iT">室内温度</span>
+                        <span class="oT">室外温度</span>
+                        <!-- <span>option3</span> -->
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <input type="checkbox" id="menu-item2">
+                    <label for="menu-item2">
+                        <i class="menu-item-icon iconfont icon-a-02-kechengguanli"></i>
+                        <span>空气指数</span>
+                        <i class="menu-item-last iconfont icon-down"></i>
+                    </label>
+                    <div class="menu-content">
+                        <span class="hD">空气湿度</span>
+                        <span class="aD">空气质量</span>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <input type="checkbox" id="menu-item3">
+                    <label for="menu-item3">
+                        <i class="menu-item-icon iconfont icon-a-04-zixunfabu"></i>
+                        <span>天气</span>
+                        <i class="menu-item-last iconfont icon-down"></i>
+                    </label>
+                    <div class="menu-content">
+                        <span class="wD">当前地区</span>
+                    </div>
+                </div>
+
+                <div class="set-line"></div>
+
+                <div class="menu-item">
+                    <label>
+                        <i class="menu-item-icon iconfont icon-a-08-shezhi"></i>
+                        <span>实时监控</span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        <div class="show-outer">
+            <div class="show-inner"></div>
+            <div class="showdata">
+                <p align="center">当前实时数据</p>
+                <div class="temperature">
+                    <span>室外温度:</span><span class="outT"></span><br><br>
+                    <span>室内温度:</span><span class="innT"></span>
+                </div>
+                <div class="humidity">
+                    <span>湿度:</span><span class="hmdD"></span>
+                </div>
+                <div class="cocctt">
+                    <span>CO浓度:</span><span class="coD"></span>
+                </div>
+                <div class="airquality">
+                    <span>空气质量:</span><span class="aqlD"></span>
+                </div>
+                <div class="weather">
+                    <span>天气:</span>
+                    <div class="wthD">
+                        <img src="./img/w-cloudy.jpg" width="150px" height="100px"><br>
+                        <span class="wdata"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footlogo"></div>
+        <div class="foottext">
+            家庭智能消防软件网版权所有 <br>
+            联系人 QQ:3650781171<br>
+            联系人电话:14706629927
+        </div>
+    </div>
+
+</body>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./alljs/aboutus.js"></script>
+<script>
+    //遍历数组进行匹配
+    var array = JSON.parse(window.localStorage.userArr);
+    let headindex;
+
+    var i = array.length;
+    headindex = array[i - 1].headindex
+    if (headindex == 1) {
+        $('#avator').attr('src', './img/userhead1.webp')
+    } else if (headindex == 2) {
+        $('#avator').attr('src', './img/userhead2.webp')
+    } else if (headindex == 3) {
+        $('#avator').attr('src', './img/userhead3.webp')
+    } else if (headindex == 4) {
+        $('#avator').attr('src', './img/userhead4.webp')
+    } else if (headindex == 5) {
+        $('#avator').attr('src', './img/userhead5.webp')
+    } else if (headindex == 6) {
+        $('#avator').attr('src', './img/userhead6.webp')
+    } else {
+        $('#avator').attr('src', './img/uShead.png')
+    }
+
+    //outT
+    let outT = (Math.random() * (21 - 20) + 20).toFixed(1)
+    //innT
+    let innT = (Math.random() * (20 - 19) + 19).toFixed(1);
+    //humD
+    let hmdD = Math.floor(Math.random() * (31 - 29) + 29);
+    //coD normal
+    let coDn=(Math.random()*(2-1)+1).toFixed(2)
+    //coD unnormal
+    let coDu=(Math.random()*(300-150)+150).toFixed(2)
+    //aqlD
+    let aqlD = "良"
+    //wthD
+    let wthD = "阴"
+
+    $('.outT').html(outT + "°c")
+    $('.innT').html(innT + "°c")
+    $('.hmdD').html(hmdD + "%")
+    $('.coD').html(coDn+"ppm")
+
+    
+    window.addEventListener('keydown',(event)=>{
+        if(event.keyCode==68){
+            $('.coD').html(coDu+"ppm")
+            clearTimeout(timeout)
+        }else if(event.keyCode==65){
+            $('.coD').html(coDn+"ppm")
+        }
+    })
+    $('.aqlD').html(aqlD)
+    $('.wdata').html(wthD)
+
+
+    var timeout=setTimeout(()=>{
+          location.reload()
+    },5000)
+
+    $('.oT').click(()=>{
+        $('.outT').css({
+            fontSize:"32px",
+            color:"red"
+        })
+    })
+
+    $('.iT').click(()=>{
+        $('.innT').css({
+            fontSize:"32px",
+            color:"red"
+        })
+    })
+
+    $('.hD').click(()=>{
+        $('.hmdD').css({
+            fontSize:"32px",
+            color:"red"
+        })
+    })
+
+    $('.aD').click(()=>{
+        $('.aqlD').css({
+            fontSize:"32px",
+            color:"red"
+        })
+    })
+
+    $('.wD').click(()=>{
+        $('.wthD').css({
+            fontSize:"32px",
+            color:"red"
+        })
+    })
+
+    $('.oT').click(()=>{
+        $('.outT').css({
+            fontSize:"32px",
+            color:"red"
+        })
+    })
+    
+</script>
+
+</html>
